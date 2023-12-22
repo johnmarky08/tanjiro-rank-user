@@ -1,0 +1,20 @@
+{
+  "name": "tanjiro-sim-teach",
+  "version": "1.0.2",
+  "description": "Tanjiro's Simsimi Database",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "John Arida (Tanjiro Senpai)",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^6.0.1",
+    "mongoose": "^8.0.3"
+  }
+}
