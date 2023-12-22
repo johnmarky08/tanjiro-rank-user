@@ -3,8 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import { createRank, getRank } from "../controller/rank.js";
 import mongoose from "mongoose";
-import { preData } from "./id.js";
-import Rank from "../model/Rank.js";
 
 const port = process.env.PORT || process.env.port || 5555,
   app = express();
@@ -38,6 +36,5 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-    Rank.insertMany(preData)
   })
   .catch((error) => console.log(`${error} did not connect`));
