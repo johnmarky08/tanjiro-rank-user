@@ -1,1 +1,0 @@
-# tanjiro-rank-user
