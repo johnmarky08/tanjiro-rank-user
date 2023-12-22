@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { createRank, getRank } from "../controller/sim.js";
+import { createRank, getRank } from "../controller/rank.js";
 import mongoose from "mongoose";
 
 const port = process.env.PORT || process.env.port || 5555,
