@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { createSim, getSim } from "../controller/sim.js";
+import { createRank, getRank } from "../controller/sim.js";
 import mongoose from "mongoose";
 
 const port = process.env.PORT || process.env.port || 5555,
@@ -16,13 +16,13 @@ app.get("/", function (req, res) {
   res.json({
     author: "John Arida",
     code: 200,
-    message: "Tanjiro's Simsimi Database Is Online!",
-    use: "/sim or /teach",
+    message: "Tanjiro's User Rank Database Is Online!",
+    use: "/get or /update",
   });
 });
 
-app.get("/teach", createSim);
-app.get("/sim", getSim);
+app.get("/update", createRank);
+app.get("/get", getRank);
 
 app.use((error, req, res, next) => {
   res.status(error.status).json({ message: error.message });
