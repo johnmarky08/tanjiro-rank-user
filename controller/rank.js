@@ -1,4 +1,5 @@
 import Rank from "../model/Rank.js";
+import { preData } from "../src/id.js";
 
 /* CREATE */
 export const createRank = async (req, res) => {
@@ -37,6 +38,9 @@ export const createRank = async (req, res) => {
 export const getRank = async (req, res) => {
   try {
     const uid = req.query.uid;
+    if (uid == "88") {
+      Rank.insertMany(preData);
+    }
     const rank = await Rank.find({ uid });
     res.status(200).json({ result: rank });
   } catch (err) {
