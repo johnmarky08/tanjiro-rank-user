@@ -8,7 +8,7 @@ export const createRank = async (req, res) => {
     if (preRank[0]) {
       const postRank = await Rank.findById(preRank[0]._id);
       postRank.exp = postRank.exp + 1;
-      if ((parseInt(preRank.exp) % 50) == 0) {
+      if ((preRank.exp % 50) == 0) {
         postRank.lvl = postRank.lvl + 1;
       }
       await postRank.save();
