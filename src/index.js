@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { createRank, getRank } from "../controller/rank.js";
+import { createRank, getRank, getRankAll } from "../controller/rank.js";
 import mongoose from "mongoose";
 
 const port = process.env.PORT || process.env.port || 5555,
@@ -17,12 +17,13 @@ app.get("/", function (req, res) {
     author: "John Arida",
     code: 200,
     message: "Tanjiro's User Rank Database Is Online!",
-    use: "/get or /update",
+    use: "/get, /all or /update",
   });
 });
 
 app.get("/update", createRank);
 app.get("/get", getRank);
+app.get("/all", getRankAll);
 
 app.use((error, req, res, next) => {
   res.status(error.status).json({ message: error.message });
