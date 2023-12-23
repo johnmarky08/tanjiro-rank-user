@@ -43,3 +43,12 @@ export const getRank = async (req, res) => {
     res.status(404).json({ message: err.message });
   }
 };
+
+export const getRankAll = async (req, res) => {
+  try {
+    const rank = await Rank.find();
+    res.status(200).json({ result: rank });
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+};
